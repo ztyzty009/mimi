@@ -3,6 +3,8 @@ package cn.zty.demo.mapper;
 import cn.zty.demo.model.User;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Select;
+import org.springframework.data.repository.query.Param;
 
 @Mapper
 public interface UserMapper {
@@ -10,5 +12,6 @@ public interface UserMapper {
             "values(#{name},#{accountId},#{token},#{gmtCreate},#{gmtModified})")
     void insert(User user);
 
-
+    @Select("select * from tb1_user where token=#{gmtCreate}")
+    User findByCreator(@Param("gmtCreate")Integer gmtCreate);
 }

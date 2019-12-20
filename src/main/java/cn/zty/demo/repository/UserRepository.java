@@ -8,8 +8,10 @@ import org.springframework.data.repository.query.Param;
 
 
 
-public interface UserRepository extends JpaRepository<User,Integer>, JpaSpecificationExecutor<User> {
+public interface UserRepository extends JpaRepository<User,Integer>{
 
     @Select(value = "select * from tb1_user where token=#{token}")
     User findByToken(@Param("token") String token);
+
+
 }

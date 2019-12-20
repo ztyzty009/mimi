@@ -3,26 +3,30 @@ package cn.zty.demo.model;
 import lombok.Data;
 
 import javax.persistence.*;
-
-//使用jpa注解配置映射关系
 @Data
-@Entity //告诉jap这是一个实体类(和数据表映射的实体类)
-@Table(name = "tb1_user") //指定和那个数据表对应，如果省略默认是类名小写
-public class User {
+@Entity
+public class Question {
     @Id//这是一个主键
     @GeneratedValue(strategy = GenerationType.IDENTITY)//自增主键
     private Integer id;
     @Column
-    private String name;
+    private String title;
     @Column
-    private String accountId;
+    private String description;
     @Column
-    private String token;
+    private String tag;
     @Column
     private Long gmtCreate;
     @Column
     private Long gmtModified;
     @Column
-    private String avatarUrl;
+    private Integer creator;
+    @Column
+    private Integer viewCount;
+    @Column
+    private Integer commentCount;
+    @Column
+    private Integer likeCount;
+
 
 }
