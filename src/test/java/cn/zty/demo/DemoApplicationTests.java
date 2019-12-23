@@ -12,7 +12,7 @@ class DemoApplicationTests {
     @Test
     void contextLoads() {
 
-            paginationDTO.setPagination(10,5,5);
+
     }
 
 }
