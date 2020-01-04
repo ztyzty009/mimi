@@ -20,7 +20,7 @@ public class PublishCotroller {
     private Questionservice questionservice;
 
     @GetMapping("/publish/{id}")
-    public String edit(@PathVariable(name = "id")Integer id,
+    public String edit(@PathVariable(name = "id")Long id,
                        Model model){
 
         QuestionDTO question = questionservice.getById(id);
@@ -38,7 +38,7 @@ public class PublishCotroller {
     @PostMapping("/publish")
     public String dopublish(@RequestParam("title") String title,
                             @RequestParam("description") String description,
-                            @RequestParam("tag") String tag, @RequestParam("id") Integer id,
+                            @RequestParam("tag") String tag, @RequestParam("id") Long id,
                             HttpServletRequest request, Model model
     ) {
         model.addAttribute("title", title);

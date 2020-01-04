@@ -1,4 +1,10 @@
 package cn.zty.demo.dto;
 
-public class ConmentDTO {
+import lombok.Data;
+
+@Data
+public class CommentDTO {
+    private Long parentId;
+    private String content;
+    private Integer type;
 }
