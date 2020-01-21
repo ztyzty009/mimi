@@ -10,6 +10,7 @@ import cn.zty.demo.mapper.UserMapper;
 import cn.zty.demo.model.Question;
 import cn.zty.demo.model.QuestionExample;
 import cn.zty.demo.model.User;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.ibatis.session.RowBounds;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +18,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class Questionservice {
@@ -51,7 +53,9 @@ public class Questionservice {
         Integer offset = size * (page - 1);
         List<QuestionDTO> questionDTOList = new ArrayList<>();
 
-        List<Question> questions = questionMapper.selectByExampleWithRowbounds(new QuestionExample(), new RowBounds(offset, size));
+        QuestionExample questionExample = new QuestionExample();
+        questionExample.setOrderByClause("gmt_create desc");
+        List<Question> questions = questionMapper.selectByExampleWithRowbounds(questionExample, new RowBounds(offset, size));
 
         for (Question question : questions) {
             User user = userMapper.selectByPrimaryKey(question.getCreator());
@@ -61,7 +65,7 @@ public class Questionservice {
             questionDTOList.add(questionDTO);
         }
 
-        paginationDTO.setQuestions(questionDTOList);
+        paginationDTO.setDate(questionDTOList);
 
 
         return paginationDTO;
@@ -79,14 +83,13 @@ public class Questionservice {
         } else {
             totalPage = totalCount / size + 1;
         }
-
         if (page <= 1) {
             page = 1;
         }
         if (page > totalPage && totalPage > 0) {
             page = totalPage;
         }
-        paginationDTO.setPagination(totalCount, page);
+        paginationDTO.setPagination(totalPage, page);
         Integer offset = size * (page - 1);
         List<QuestionDTO> questionDTOList = new ArrayList<>();
         QuestionExample questionExample = new QuestionExample();
@@ -101,7 +104,7 @@ public class Questionservice {
             questionDTOList.add(questionDTO);
         }
 
-        paginationDTO.setQuestions(questionDTOList);
+        paginationDTO.setDate(questionDTOList);
 
 
         return paginationDTO;
@@ -152,5 +155,24 @@ public class Questionservice {
         question.setViewCount(1);
         questionExtMapper.incView(question);
 
+    }
+
+    public List<QuestionDTO> selectRelated(QuestionDTO queryDTO) {
+        if (StringUtils.isBlank(queryDTO.getTag())){
+            return new ArrayList<>();
+        }
+
+        String tags = StringUtils.replace(queryDTO.getTag(), ",", "|");
+        Question question = new Question();
+        question.setId(queryDTO.getId());
+        question.setTag(tags);
+        List<Question> questions = questionExtMapper.selectRelated(question);
+        List<QuestionDTO> questionDTOS = questions.stream().map(q ->{
+            QuestionDTO questionDTO = new QuestionDTO();
+            BeanUtils.copyProperties(q,questionDTO);
+            return questionDTO;
+        }).collect(Collectors.toList());
+
+        return questionDTOS;
     }
 }

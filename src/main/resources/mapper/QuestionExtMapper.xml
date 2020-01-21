@@ -26,4 +26,7 @@
     comment_count = comment_count+#{commentCount,jdbcType=INTEGER}
     where id =#{id}
   </update>
+  <select id="selectRelated" parameterType="cn.zty.demo.model.Question" resultMap="BaseResultMap">
+    select * from Question where id != #{id} and tag regexp #{tag}
+  </select>
 </mapper>

@@ -2,6 +2,7 @@ package cn.zty.demo.controller;
 
 import cn.zty.demo.dto.PaginationDTO;
 import cn.zty.demo.model.User;
+import cn.zty.demo.service.NotificationService;
 import cn.zty.demo.service.Questionservice;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,6 +19,8 @@ public class ProfileController {
 
     @Autowired
     private Questionservice questionservice;
+    @Autowired
+    private NotificationService notificationService;
 
     @GetMapping("/profile/{action}")
     public String profile(@PathVariable(name = "action") String action,
@@ -27,18 +30,21 @@ public class ProfileController {
 
     ) {
         User user = (User) request.getSession().getAttribute("user");
+        if (user == null){
+            return "redirect:/";
+        }
 
         if ("questions".equals(action)) {
             model.addAttribute("section", "questions");
             model.addAttribute("sectionName", "我的提问");
-        } else if ("repies".equals(action)) {
-            model.addAttribute("section", "repies");
+            PaginationDTO paginationDTO = questionservice.list(user.getId(), page, size);
+            model.addAttribute("pagination",paginationDTO);
+        } else if ("replies".equals(action)) {
+            PaginationDTO paginationDTO = notificationService.list(user.getId(), page, size);
+            model.addAttribute("section", "replies");
+            model.addAttribute("pagination",paginationDTO);
             model.addAttribute("sectionName", "最新回复");
         }
-
-        PaginationDTO paginationDTO = questionservice.list(user.getId(), page, size);
-
-        model.addAttribute("pagination",paginationDTO);
 
         return "profile";
     }

@@ -22,7 +22,7 @@ public class IndexController {
     public String index(HttpServletRequest request,
                         Model model,
                         @RequestParam(name = "page",defaultValue = "1")Integer page,
-                        @RequestParam(name = "size",defaultValue = "4")Integer size
+                        @RequestParam(name = "size",defaultValue = "6")Integer size
 
     ){
         User user = (User) request.getSession().getAttribute("user");
