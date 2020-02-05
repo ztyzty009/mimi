@@ -19,15 +19,14 @@ public class IndexController {
     private Questionservice questionservice;
 
     @GetMapping("/")
-    public String index(HttpServletRequest request,
-                        Model model,
+    public String index(HttpServletRequest request, Model model,
                         @RequestParam(name = "page",defaultValue = "1")Integer page,
-                        @RequestParam(name = "size",defaultValue = "6")Integer size
-
+                        @RequestParam(name = "size",defaultValue = "6")Integer size,
+                        @RequestParam(name = "search",required = false)String search
     ){
-        User user = (User) request.getSession().getAttribute("user");
-        PaginationDTO pagination = questionservice.list(page, size);
+        PaginationDTO pagination = questionservice.list(search,page, size);
         model.addAttribute("pagination",pagination);
+        model.addAttribute("search",search);
 
         return "index";
 

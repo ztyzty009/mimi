@@ -19,11 +19,8 @@ import java.util.Random;
 
 
 public class FileUploadUtil {
-    @Value("${qcloud.qfiel.pubilc-key}")
-    private String pubilcKey;
-    @Value("${qcloud.qfiel.private-key}")
-    private String privateKey;
-    public static COSCredentials cred = new BasicCOSCredentials("AKIDc2HG1VgYHn21kCqPCj01mHYYMDpBo7k8","IOK3WjmZ6RpFTSGrFOvGTR9dsra8VifV" );
+
+    public static COSCredentials cred = new BasicCOSCredentials("AKIDxtd76rGs1Wv99vjqytkOp32nLeihmJp7","GI8nNegS4SaTAtQggT3RddcT4QWO1Pbk" );
     public static ClientConfig clientConfig = new ClientConfig(new Region("ap-chengdu"));
     public static COSClient cosClient = new COSClient(cred, clientConfig);
     public static String bucketName = "ztyzty-1301151586";

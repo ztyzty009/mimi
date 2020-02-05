@@ -2,6 +2,7 @@ package cn.zty.demo.service;
 
 import cn.zty.demo.dto.PaginationDTO;
 import cn.zty.demo.dto.QuestionDTO;
+import cn.zty.demo.dto.QuestionQuryDTO;
 import cn.zty.demo.exception.CustomizeEception;
 import cn.zty.demo.exception.CustomizeErrorCode;
 import cn.zty.demo.mapper.QuestionExtMapper;
@@ -16,7 +17,9 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -31,11 +34,17 @@ public class Questionservice {
     private UserMapper userMapper;
 
 
-    public PaginationDTO list(Integer page, Integer size) {
+    public PaginationDTO list(String search,Integer page, Integer size) {
 
-        PaginationDTO paginationDTO = new PaginationDTO();
-        Integer totalCount = (int) questionMapper.countByExample(new QuestionExample());
+        if (StringUtils.isNoneBlank(search)){
+            String[] tags = StringUtils.split(search," ");
+            search = Arrays.stream(tags).collect(Collectors.joining("|"));
+        }
         Integer totalPage;
+        PaginationDTO paginationDTO = new PaginationDTO();
+        QuestionQuryDTO questionQuryDTO = new QuestionQuryDTO();
+        questionQuryDTO.setSearch(search);
+        Integer totalCount =  questionExtMapper.coutBySearch(questionQuryDTO);
         if (totalCount % size == 0) {
             totalPage = totalCount / size;
         } else {
@@ -51,12 +60,11 @@ public class Questionservice {
         paginationDTO.setPagination(totalPage, page);
 
         Integer offset = size * (page - 1);
+
+        questionQuryDTO.setSize(size);
+        questionQuryDTO.setPage(offset);
+        List<Question> questions = questionExtMapper.selectBysearch(questionQuryDTO);
         List<QuestionDTO> questionDTOList = new ArrayList<>();
-
-        QuestionExample questionExample = new QuestionExample();
-        questionExample.setOrderByClause("gmt_create desc");
-        List<Question> questions = questionMapper.selectByExampleWithRowbounds(questionExample, new RowBounds(offset, size));
-
         for (Question question : questions) {
             User user = userMapper.selectByPrimaryKey(question.getCreator());
             QuestionDTO questionDTO = new QuestionDTO();
@@ -64,10 +72,7 @@ public class Questionservice {
             questionDTO.setUser(user);
             questionDTOList.add(questionDTO);
         }
-
         paginationDTO.setDate(questionDTOList);
-
-
         return paginationDTO;
     }
 
@@ -172,7 +177,6 @@ public class Questionservice {
             BeanUtils.copyProperties(q,questionDTO);
             return questionDTO;
         }).collect(Collectors.toList());
-
         return questionDTOS;
     }
 }
