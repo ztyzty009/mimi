@@ -115,7 +115,7 @@
                 <artifactId>flyway-maven-plugin</artifactId>
                 <version>5.2.4</version>
                 <configuration>
-                    <url>jdbc:mysql://172.21.0.15:3306/xiangjiao?characterEncoding=utf8&amp;useUnicode=true&amp;useSSL=false&amp;serverTimezone=UTC</url>
+                    <url>jdbc:mysql://cdb-p60ug92c.bj.tencentcdb.com:10058/xiangjiao</url>
                     <user>root</user>
                     <password>oopp110066</password>
                 </configuration>
