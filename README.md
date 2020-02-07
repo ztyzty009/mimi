@@ -17,7 +17,9 @@
 -sudo yum install -y maven
 -mvn -v
 -mvn clean compile package
-
+-cp src/main/resources/application.properties src/main/resources/application-production.properties
+-vim src/main/resources/application-production.properties
+-java -jar -Dspring.profiles.active=production target/demo-0.0.1-SNAPSHOT.jar
 
 
 ###资料
