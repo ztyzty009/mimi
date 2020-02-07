@@ -20,7 +20,7 @@ import java.util.Random;
 
 public class FileUploadUtil {
 
-    public static COSCredentials cred = new BasicCOSCredentials("AKIDxtd76rGs1Wv99vjqytkOp32nLeihmJp7","GI8nNegS4SaTAtQggT3RddcT4QWO1Pbk" );
+    public static COSCredentials cred = new BasicCOSCredentials("AKIDlzwfqmAyDE9pEQw0vTklBMIyXqtNqMIV","m8F7j5CXdV8WhIEvOcaIkbDdoslmKdkc" );
     public static ClientConfig clientConfig = new ClientConfig(new Region("ap-chengdu"));
     public static COSClient cosClient = new COSClient(cred, clientConfig);
     public static String bucketName = "ztyzty-1301151586";

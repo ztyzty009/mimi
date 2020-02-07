@@ -1,3 +1,24 @@
+##香蕉社区
+
+##部署
+###依赖
+-Git
+-JDK
+-Maven
+-Mysql
+##步骤
+-yum update
+-yum install git  安装git
+-mkdir App
+-cd App
+-git clone https://github.com/ztyzty009/mimi.git
+-sudo wget http://repos.fedorapeople.org/repos/dchen/apache-maven/epel-apache-maven.repo -O /etc/yum.repos.d/epel-apache-maven.repo
+-sudo sed -i s/\$releasever/6/g /etc/yum.repos.d/epel-apache-maven.repo
+-sudo yum install -y maven
+-mvn -v
+-mvn clean compile package
+
+
 
 ###资料
 [Markdown 插件](http://editor.md.ipandao.com/)

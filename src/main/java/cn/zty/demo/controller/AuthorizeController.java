@@ -5,6 +5,7 @@ import cn.zty.demo.dto.GithubUser;
 import cn.zty.demo.model.User;
 import cn.zty.demo.provider.GithubProvider;
 import cn.zty.demo.service.UserService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
@@ -17,6 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.UUID;
 
 @Controller
+@Slf4j
 public class AuthorizeController {
 
 
@@ -47,20 +49,19 @@ public class AuthorizeController {
         String accessToken = githubProvider.getAccessToken(accessTokenDTO);
         GithubUser githubUser = githubProvider.getUser(accessToken);
         if (githubUser != null && githubUser.getId() !=null) {
-            //登录成功
             User user = new User();
             String token = UUID.randomUUID().toString();
             user.setToken(token);
             user.setName(githubUser.getName());
             user.setAccountId(String.valueOf(githubUser.getId()));
-
             user.setAvatarUrl(githubUser.getAvatar_url());
             userService.createOrUpdate(user);
             response.addCookie(new Cookie("token",token));
-            request.getSession().setAttribute("user", githubUser);
             return "redirect:/";
         } else {
+            log.error("callback get github error，{}",githubUser);
             //登录失败
+
             return "redirect:/";
         }
     }
