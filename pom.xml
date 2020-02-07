@@ -116,6 +116,7 @@
                 <version>5.2.4</version>
                 <configuration>
                     <url>jdbc:mysql://cdb-p60ug92c.bj.tencentcdb.com:10058/xiangjiao</url>
+                    <driver>com.mysql.jdbc.Driver</driver>
                     <user>root</user>
                     <password>oopp110066</password>
                 </configuration>
