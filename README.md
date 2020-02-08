@@ -21,6 +21,7 @@
 -vim src/main/resources/application-production.properties
 -java -jar -spring.profiles.active=production $JAR_PATH/demo-0.0.1-SNAPSHOT.jar
 -mvn clean compile flyway:migrate
+-nohup java -jar -Dspring.profiles.active=production target/demo-0.0.1-SNAPSHOT.jar
 
 ###资料
 [Markdown 插件](http://editor.md.ipandao.com/)
