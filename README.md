@@ -20,7 +20,7 @@
 -cp src/main/resources/application.properties src/main/resources/application-production.properties
 -vim src/main/resources/application-production.properties
 -java -jar -spring.profiles.active=production $JAR_PATH/demo-0.0.1-SNAPSHOT.jar
--mvn clean compile flyway:migrate
+-mvn compile flyway:migrate
 -nohup java -jar -Dspring.profiles.active=production target/demo-0.0.1-SNAPSHOT.jar
 
 ###资料
