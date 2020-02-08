@@ -7,8 +7,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
 class DemoApplicationTests {
-    @Autowired
-    PaginationDTO paginationDTO;
+
     @Test
     void contextLoads() {
 

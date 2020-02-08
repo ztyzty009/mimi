@@ -2,14 +2,11 @@ package cn.zty.demo.dto;
 
 import lombok.Data;
 
-
 import java.util.ArrayList;
 import java.util.List;
 
-
-
 @Data
-public class PaginationDTO<T> {
+public class PaginationDTO<T>{
     private List<T> date;
     private boolean showPrevious;
     private boolean showFirstPage;
