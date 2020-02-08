@@ -16,7 +16,7 @@
 -sudo sed -i s/\$releasever/6/g /etc/yum.repos.d/epel-apache-maven.repo
 -sudo yum install -y maven
 -mvn -v
--mvn compile package
+-mvn clean compile package
 -cp src/main/resources/application.properties src/main/resources/application-production.properties
 -vim src/main/resources/application-production.properties
 -java -jar -Dspring.profiles.active=production $JAR_PATH/demo-0.0.1-SNAPSHOT.jar
@@ -31,4 +31,4 @@
 ```bash
 mvn -Dmybatis.generator.overwrite=true mybatis-generator:generate
 逆向工程
-```
+```more src/main/resources/application.properties
