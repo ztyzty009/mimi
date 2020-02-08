@@ -98,3 +98,84 @@
 ### SQL: select count(*) from Question
 ### Cause: java.sql.SQLSyntaxErrorException: Table '1.Question' doesn't exist
 ; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Table '1.Question' doesn't exist]
+2020-02-08 21:21:43.778  INFO 14588 --- [restartedMain] cn.zty.demo.DemoApplication              : Starting DemoApplication on DESKTOP-2AFPMGI with PID 14588 (D:\zty\spring_boot\demo\target\classes started by 官其东 in D:\zty\spring_boot\demo)
+2020-02-08 21:21:43.780  INFO 14588 --- [restartedMain] cn.zty.demo.DemoApplication              : No active profile set, falling back to default profiles: default
+2020-02-08 21:21:43.835  INFO 14588 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in D:\zty\tools\repository\org\glassfish\jaxb\jaxb-runtime\2.3.2\jaxb-runtime-2.3.2.jar referenced one or more files that do not exist: file:/D:/zty/tools/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.xml.bind-api-2.3.2.jar,file:/D:/zty/tools/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/txw2-2.3.2.jar,file:/D:/zty/tools/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/istack-commons-runtime-3.0.8.jar,file:/D:/zty/tools/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/stax-ex-1.8.1.jar,file:/D:/zty/tools/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/FastInfoset-1.2.16.jar,file:/D:/zty/tools/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.activation-api-1.2.1.jar
+2020-02-08 21:21:43.836  INFO 14588 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-02-08 21:21:43.836  INFO 14588 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-02-08 21:21:44.371  INFO 14588 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-02-08 21:21:44.371  INFO 14588 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2020-02-08 21:21:44.391  INFO 14588 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 16ms. Found 0 JDBC repository interfaces.
+2020-02-08 21:21:44.399  INFO 14588 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-02-08 21:21:44.399  INFO 14588 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-02-08 21:21:44.406  INFO 14588 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4ms. Found 0 JPA repository interfaces.
+2020-02-08 21:21:44.693  INFO 14588 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-08 21:21:45.071  INFO 14588 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8887 (http)
+2020-02-08 21:21:45.078  INFO 14588 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-02-08 21:21:45.078  INFO 14588 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-02-08 21:21:45.168  INFO 14588 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-02-08 21:21:45.169  INFO 14588 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1333 ms
+2020-02-08 21:21:45.302  INFO 14588 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-02-08 21:21:45.364  INFO 14588 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate Core {5.4.9.Final}
+2020-02-08 21:21:45.463  INFO 14588 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-02-08 21:21:45.542  INFO 14588 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-02-08 21:21:46.223  INFO 14588 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-02-08 21:21:46.232  INFO 14588 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2020-02-08 21:21:46.938  INFO 14588 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-02-08 21:21:46.944  INFO 14588 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-02-08 21:21:46.967  INFO 14588 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-02-08 21:21:47.293  WARN 14588 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-02-08 21:21:47.394  INFO 14588 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-02-08 21:21:47.442  INFO 14588 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-02-08 21:21:47.698  INFO 14588 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8887 (http) with context path ''
+2020-02-08 21:21:47.706  INFO 14588 --- [restartedMain] cn.zty.demo.DemoApplication              : Started DemoApplication in 4.289 seconds (JVM running for 5.223)
+2020-02-08 21:22:32.624  INFO 14588 --- [http-nio-8887-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-02-08 21:22:32.624  INFO 14588 --- [http-nio-8887-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-02-08 21:22:32.629  INFO 14588 --- [http-nio-8887-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2020-02-08 21:22:32.719  WARN 14588 --- [http-nio-8887-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'code' is not present]
+2020-02-08 21:22:46.758  WARN 14588 --- [http-nio-8887-exec-5] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'code' is not present]
+2020-02-08 21:22:51.851  WARN 14588 --- [http-nio-8887-exec-10] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required String parameter 'code' is not present]
+2020-02-08 21:22:52.383 ERROR 14588 --- [http-nio-8887-exec-9] c.z.demo.controller.AuthorizeController  : callback get github error，GithubUser(name=null, id=null, bio=null, avatar_url=null)
+2020-02-08 21:22:56.693 ERROR 14588 --- [http-nio-8887-exec-4] c.z.demo.controller.AuthorizeController  : callback get github error，GithubUser(name=null, id=null, bio=null, avatar_url=null)
+2020-02-08 21:31:30.100  INFO 12728 --- [restartedMain] cn.zty.demo.DemoApplication              : Starting DemoApplication on DESKTOP-2AFPMGI with PID 12728 (D:\zty\spring_boot\demo\target\classes started by 官其东 in D:\zty\spring_boot\demo)
+2020-02-08 21:31:30.103  INFO 12728 --- [restartedMain] cn.zty.demo.DemoApplication              : No active profile set, falling back to default profiles: default
+2020-02-08 21:31:30.158  INFO 12728 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in D:\zty\tools\repository\org\glassfish\jaxb\jaxb-runtime\2.3.2\jaxb-runtime-2.3.2.jar referenced one or more files that do not exist: file:/D:/zty/tools/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.xml.bind-api-2.3.2.jar,file:/D:/zty/tools/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/txw2-2.3.2.jar,file:/D:/zty/tools/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/istack-commons-runtime-3.0.8.jar,file:/D:/zty/tools/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/stax-ex-1.8.1.jar,file:/D:/zty/tools/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/FastInfoset-1.2.16.jar,file:/D:/zty/tools/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.activation-api-1.2.1.jar
+2020-02-08 21:31:30.159  INFO 12728 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-02-08 21:31:30.159  INFO 12728 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-02-08 21:31:30.696  INFO 12728 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-02-08 21:31:30.697  INFO 12728 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2020-02-08 21:31:30.714  INFO 12728 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 14ms. Found 0 JDBC repository interfaces.
+2020-02-08 21:31:30.722  INFO 12728 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-02-08 21:31:30.722  INFO 12728 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-02-08 21:31:30.731  INFO 12728 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4ms. Found 0 JPA repository interfaces.
+2020-02-08 21:31:31.015  INFO 12728 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-08 21:31:31.387  INFO 12728 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8887 (http)
+2020-02-08 21:31:31.395  INFO 12728 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-02-08 21:31:31.395  INFO 12728 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-02-08 21:31:31.488  INFO 12728 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-02-08 21:31:31.489  INFO 12728 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1330 ms
+2020-02-08 21:31:31.609  INFO 12728 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-02-08 21:31:31.671  INFO 12728 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate Core {5.4.9.Final}
+2020-02-08 21:31:31.766  INFO 12728 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-02-08 21:31:31.839  INFO 12728 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-02-08 21:31:32.419  INFO 12728 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-02-08 21:31:32.427  INFO 12728 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2020-02-08 21:31:33.034  INFO 12728 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-02-08 21:31:33.040  INFO 12728 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-02-08 21:31:33.068  INFO 12728 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-02-08 21:31:33.404  WARN 12728 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-02-08 21:31:33.511  INFO 12728 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-02-08 21:31:33.570  INFO 12728 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-02-08 21:31:33.850  INFO 12728 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8887 (http) with context path ''
+2020-02-08 21:31:33.853  INFO 12728 --- [restartedMain] cn.zty.demo.DemoApplication              : Started DemoApplication in 4.11 seconds (JVM running for 4.985)
+2020-02-08 21:31:41.328  INFO 12728 --- [http-nio-8887-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-02-08 21:31:41.328  INFO 12728 --- [http-nio-8887-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-02-08 21:31:41.334  INFO 12728 --- [http-nio-8887-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
+2020-02-08 21:31:48.360  WARN 12728 --- [http-nio-8887-exec-5] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Table 'xiangjiao.tb1_user' doesn't exist
+### The error may exist in file [D:\zty\spring_boot\demo\target\classes\mapper\UserMapper.xml]
+### The error may involve cn.zty.demo.mapper.UserMapper.selectByExample-Inline
+### The error occurred while setting parameters
+### SQL: select                      id, account_id, gmt_create, gmt_modified, name, token, avatar_url         from tb1_user                         WHERE (  account_id = ? )
+### Cause: java.sql.SQLSyntaxErrorException: Table 'xiangjiao.tb1_user' doesn't exist
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Table 'xiangjiao.tb1_user' doesn't exist]
