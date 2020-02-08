@@ -16,7 +16,7 @@
 -sudo sed -i s/\$releasever/6/g /etc/yum.repos.d/epel-apache-maven.repo
 -sudo yum install -y maven
 -mvn -v
--mvn clean compile package
+-mvn compile package
 -cp src/main/resources/application.properties src/main/resources/application-production.properties
 -vim src/main/resources/application-production.properties
 -java -jar -spring.profiles.active=production $JAR_PATH/demo-0.0.1-SNAPSHOT.jar
