@@ -97,6 +97,11 @@
             <artifactId>cos_api</artifactId>
             <version>5.6.8</version>
         </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>
